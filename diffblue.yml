@@ -1,0 +1,149 @@
+# Tested on Deeptest release 1.12.0
+cbmcArguments:
+  java-generate-no-comments: true
+phases:
+-
+  timeout: 60
+  cbmcArguments:
+    max-nondet-array-length: 10
+    unwind: 1
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 10
+    unwind: 1
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 4
+    load-containing-class-only: true
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 50
+    max-nondet-string-length: 50
+    unwind: 4
+    load-containing-class-only: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 130
+    max-nondet-string-length: 110
+    unwind: 10
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 300
+    max-nondet-string-length: 100
+    unwind: 10
+
+units:
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/bean/BeanPublisher.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/bean/BeanPublisher.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/db/sql/token/StringTokenParser.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/db/sql/token/StringTokenParser.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/db/sql/token/MapedSqlTokenParser.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/db/sql/token/MapedSqlTokenParser.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/main/SumkThreadPool.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/main/SumkThreadPool.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/redis/RedisImpl.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/redis/RedisImpl.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/redis/RedisTemplate.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/redis/RedisTemplate.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/http/handler/HttpHandlerChain.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/http/handler/HttpHandlerChain.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/test-classes
+      file: org/test/soa/server/SOAServer.class
+      sourceDir: src/test/java
+      sourceFile: org/test/soa/server/SOAServer.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/rpc/server/start/SOAServer.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/rpc/server/start/SOAServer.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/log/Loggers.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/log/Loggers.java
+  # Target Coverage: Unknown %
+  - target:
+    - dir: target/classes
+      file: org/yx/conf/DBConfigUtils.class
+      sourceDir: src/main/java
+      sourceFile: org/yx/conf/DBConfigUtils.java
